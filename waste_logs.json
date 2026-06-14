@@ -1,0 +1,30 @@
+[
+  {
+    "id": "log-001",
+    "productId": "prod-005",
+    "sku": "PRD-SPIN-05",
+    "productName": "Organic Baby Spinach 150g Bag",
+    "category": "Produce",
+    "quantity": 8,
+    "unit": "bags",
+    "lossAmount": 11.2,
+    "potentialLossSaved": 0,
+    "action": "Composted",
+    "date": "2026-06-13",
+    "comment": "Turned yellow/liquicty on shelf; sent to organic waste partner."
+  },
+  {
+    "id": "log-002",
+    "productId": "prod-004",
+    "sku": "BK-CROIS-04",
+    "productName": "Butter Croissant Pack of 4",
+    "category": "Bakery",
+    "quantity": 6,
+    "unit": "packs",
+    "lossAmount": 7.2,
+    "potentialLossSaved": 16.74,
+    "action": "Donated",
+    "date": "2026-06-14",
+    "comment": "Donated remaining surplus batch to local soup kitchen."
+  }
+]

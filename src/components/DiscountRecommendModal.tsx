@@ -52,6 +52,7 @@ export default function DiscountRecommendModal({
     }
   }, [isOpen, product.id]);
 
+  
   const fetchRecommendation = async () => {
     setLoading(true);
     setError(null);
@@ -59,33 +60,57 @@ export default function DiscountRecommendModal({
     setPhaseIndex(0);
 
     try {
-      const response = await fetch("/api/discount/suggest", {
+      // 1. Logika untuk menghitung sisa hari expired (AI butuh angka, bukan tanggal)
+      const today = new Date();
+      const expiry = new Date(product.expirationDate);
+      const diffTime = expiry.getTime() - today.getTime();
+      const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
+
+      // 2. Memanggil AI asli Anda di Google Cloud Run
+      const response = await fetch("https://food-waste-ai-625899891226.asia-southeast1.run.app/predict", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          name: product.name,
-          category: product.category,
-          quantity: product.quantity,
-          unit: product.unit,
-          unitPrice: product.unitPrice,
-          costPrice: product.costPrice,
-          expirationDate: product.expirationDate
+          nama: product.name,
+          harga_idr: product.unitPrice,
+          stok: product.quantity,
+          sisa_hari_expired: diffDays
         })
       });
 
       if (!response.ok) {
-        throw new Error("Failed to get response from server endpoint.");
+        throw new Error("Gagal mendapatkan respon dari server AI Anda.");
       }
 
-      const data = await response.json();
-      setRecommendation(data);
+      const aiData = await response.json();
+
+      // 3. Menyesuaikan jawaban AI Anda ke tampilan UI teman Anda
+      // Karena AI mengirim "50%", kita ambil angkanya saja untuk perhitungan harga baru
+      const discountPercentage = parseInt(aiData.diskon_rekomendasi) || 0;
+      const newPrice = product.unitPrice * (1 - discountPercentage / 100);
+
+      const transformedData: PricingRecommendation = {
+        suggestedDiscount: discountPercentage,
+        suggestedRetailPrice: newPrice,
+        reasoning: aiData.catatan,
+        wasteImpactDescription: `AI Prediksi Penjualan: ${aiData.prediksi_jual_qty} unit. Risiko: ${aiData.risiko}.`,
+        repurposeIdea: {
+          title: aiData.risiko === "High Risk" ? "Urgent Stock Salvage" : "Waste Mitigation",
+          description: aiData.catatan,
+          deliUpsellTitle: aiData.risiko === "High Risk" ? "Deli Kitchen Priority" : "Shelf Optimization"
+        }
+      };
+
+      setRecommendation(transformedData);
     } catch (err) {
       console.error(err);
-      setError(err instanceof Error ? err.message : "Failed to fetch recommendation.");
+      setError(err instanceof Error ? err.message : "Failed to fetch recommendation from AI.");
     } finally {
       setLoading(false);
     }
   };
+
+
 
   if (!isOpen) return null;
 
