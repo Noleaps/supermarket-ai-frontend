@@ -1,0 +1,197 @@
+[
+  {
+    "id": "prod-001",
+    "sku": "PRD-STRW-01",
+    "name": "Organic Fresh Strawberries 250g",
+    "category": "Produce",
+    "quantity": 42,
+    "unit": "packs",
+    "unitPrice": 4.99,
+    "costPrice": 2.2,
+    "expirationDate": "2026-06-15",
+    "status": "Active",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.178Z",
+        "action": "Stocked",
+        "comment": "Initial batch arrival"
+      }
+    ]
+  },
+  {
+    "id": "prod-002",
+    "sku": "MT-RIBEYE-02",
+    "name": "Premium Beef Ribeye Steak 400g",
+    "category": "Meat & Seafood",
+    "quantity": 15,
+    "unit": "packs",
+    "unitPrice": 16.5,
+    "costPrice": 8.8,
+    "expirationDate": "2026-06-15",
+    "status": "Active",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Cold chain received"
+      }
+    ]
+  },
+  {
+    "id": "prod-003",
+    "sku": "DY-GREK-03",
+    "name": "Premium Greek Yogurt Plain 1kg",
+    "category": "Dairy",
+    "quantity": 28,
+    "unit": "tubs",
+    "unitPrice": 6.25,
+    "costPrice": 3.1,
+    "expirationDate": "2026-06-16",
+    "status": "Active",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Pallet stock shelf-mounted"
+      }
+    ]
+  },
+  {
+    "id": "prod-004",
+    "sku": "BK-CROIS-04",
+    "name": "Butter Croissant Pack of 4",
+    "category": "Bakery",
+    "quantity": 18,
+    "unit": "packs",
+    "unitPrice": 3.99,
+    "costPrice": 1.2,
+    "expirationDate": "2026-06-14",
+    "status": "Active",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Baked fresh in-store"
+      }
+    ]
+  },
+  {
+    "id": "prod-005",
+    "sku": "PRD-SPIN-05",
+    "name": "Organic Baby Spinach 150g Bag",
+    "category": "Produce",
+    "quantity": 25,
+    "unit": "bags",
+    "unitPrice": 3.49,
+    "costPrice": 1.4,
+    "expirationDate": "2026-06-13",
+    "status": "Expired",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Salad bar shelf-mounted"
+      },
+      {
+        "timestamp": "2026-06-14T07:05:02.599Z",
+        "action": "Expired",
+        "comment": "System marked expired automatically based on date."
+      }
+    ]
+  },
+  {
+    "id": "prod-006",
+    "sku": "DY-WHOLE-06",
+    "name": "Organic Whole Milk 2L",
+    "category": "Dairy",
+    "quantity": 35,
+    "unit": "bottles",
+    "unitPrice": 4.8,
+    "costPrice": 2.3,
+    "expirationDate": "2026-06-12",
+    "status": "Expired",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Cooler display stocked"
+      },
+      {
+        "timestamp": "2026-06-14T07:05:02.599Z",
+        "action": "Expired",
+        "comment": "System marked expired automatically based on date."
+      }
+    ]
+  },
+  {
+    "id": "prod-007",
+    "sku": "DL-ROAST-07",
+    "name": "In-Store Roasted Rotisserie Chicken",
+    "category": "Deli",
+    "quantity": 12,
+    "unit": "items",
+    "unitPrice": 9.99,
+    "costPrice": 4.5,
+    "expirationDate": "2026-06-14",
+    "status": "Active",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Hot case mounted"
+      }
+    ]
+  },
+  {
+    "id": "prod-008",
+    "sku": "PN-PTAS-08",
+    "name": "Classic Marinara Pasta Sauce Glass Jar",
+    "category": "Pantry",
+    "quantity": 80,
+    "unit": "jars",
+    "unitPrice": 3.2,
+    "costPrice": 1.5,
+    "expirationDate": "2026-12-11",
+    "status": "Active",
+    "appliedDiscount": 0,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Ambient shelf filled"
+      }
+    ]
+  },
+  {
+    "id": "prod-009",
+    "sku": "MT-SALM-09",
+    "name": "Fresh Atlantic Salmon Fillet 350g",
+    "category": "Meat & Seafood",
+    "quantity": 14,
+    "unit": "packs",
+    "unitPrice": 12.99,
+    "costPrice": 6.8,
+    "expirationDate": "2026-06-15",
+    "status": "Discounted",
+    "appliedDiscount": 30,
+    "history": [
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Stocked",
+        "comment": "Fresh counter stocked"
+      },
+      {
+        "timestamp": "2026-06-14T07:02:00.179Z",
+        "action": "Discounted",
+        "comment": "Applied 30% markdown due to expiry match"
+      }
+    ]
+  }
+]
