@@ -8,14 +8,11 @@ export default defineConfig(() => {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, '.'),
+        '@': path.resolve(__dirname, './src'),
       },
     },
     server: {
-      // INI ADALAH TAMBAHAN UNTUK MEMBUKA BLOKIR HOST
-      allowedHosts: true, 
-      
-      // Pengaturan HMR dan Watch bawaan
+      allowedHosts: true, // WAJIB: Supaya website bisa terbuka di link Cloud Run
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },

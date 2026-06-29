@@ -1,6 +1,6 @@
 {
-  "name": "Supermarket Food Waste Tracker",
-  "description": "An interactive real-time management dashboard for supermarket merchandisers to track inventory expiration dates, dynamic waste status, and receive AI-driven markdown discount and deli-repurposing suggestions using Gemini.",
+  "name": "Food Waste AI Dashboard",
+  "description": "An AI-powered inventory tracker and food waste prediction system.",
   "requestFramePermissions": [],
   "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
 }
