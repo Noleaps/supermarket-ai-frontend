@@ -1,18 +1,21 @@
 import tailwindcss from '@tailwindcss/vite';
 import react from '@vitejs/plugin-react';
 import path from 'path';
-import { defineConfig } from 'vite';
+import {defineConfig} from 'vite';
 
 export default defineConfig(() => {
   return {
     plugins: [react(), tailwindcss()],
     resolve: {
       alias: {
-        '@': path.resolve(__dirname, './src'),
+        '@': path.resolve(__dirname, '.'),
       },
     },
     server: {
-      allowedHosts: true, // WAJIB: Supaya website bisa terbuka di link Cloud Run
+      // TAMBAHKAN BARIS INI: Agar link Cloud Run tidak memunculkan error "Blocked request"
+      allowedHosts: true,
+
+      // Pengaturan bawaan (Jangan diubah)
       hmr: process.env.DISABLE_HMR !== 'true',
       watch: process.env.DISABLE_HMR === 'true' ? null : {},
     },
